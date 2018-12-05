@@ -1,0 +1,8 @@
+[package]
+name = "client"
+version = "0.1.0"
+authors = ["Kirill Kamakin <k.kamakin@protonmail.ch>"]
+
+[dependencies]
+libc = "0.2"
+dirs = "1.0"

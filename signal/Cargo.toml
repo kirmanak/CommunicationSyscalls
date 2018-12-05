@@ -1,0 +1,8 @@
+[package]
+name = "signal"
+version = "0.1.0"
+authors = ["Kirill Kamakin <k.kamakin@protonmail.ch>"]
+
+[dependencies]
+libc = "0.2"
+lazy_static = "1.2"

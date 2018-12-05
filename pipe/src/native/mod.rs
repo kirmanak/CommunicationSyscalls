@@ -1,4 +1,4 @@
-use libc::{fork, pipe2, dup2, execlp, c_char};
+use libc::{fork, pipe, dup2, execlp, c_char};
 
 mod errno;
 mod strings;
@@ -19,7 +19,7 @@ pub fn execute_in_child<T: FnOnce() -> Errno>(actions: T) -> Result<(), Errno> {
 
 pub fn create_pipe() -> Result<(RawFd, RawFd), Errno> {
     let mut descriptors: [RawFd; 2] = [0; 2];
-    let status = unsafe { pipe2(descriptors.as_mut_ptr(), 0) };
+    let status = unsafe { pipe(descriptors.as_mut_ptr()) };
     if status == 0 {
         Ok((descriptors[0], descriptors[1]))
     } else {

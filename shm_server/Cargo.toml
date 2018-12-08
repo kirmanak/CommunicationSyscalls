@@ -5,3 +5,4 @@ authors = ["Kirill Kamakin <k.kamakin@protonmail.ch>"]
 
 [dependencies]
 libc = "0.2"
+simple-signal = "1.1"

@@ -1,5 +1,7 @@
 use std::fmt;
 use native::{get_gid, get_pid, get_uid, get_loadavg, get_time};
+use std::marker::Send;
+use std::ptr::NonNull;
 
 /// Represents the current state of the server
 #[derive(Clone)]
@@ -13,6 +15,9 @@ pub struct CurrentState {
     loadavg_5: f64,
     loadavg_15: f64,
 }
+
+pub struct StateWrapper(pub NonNull<CurrentState>);
+unsafe impl Send for StateWrapper {}
 
 impl CurrentState {
     /// Creates the initial state of the server

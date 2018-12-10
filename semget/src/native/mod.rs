@@ -16,7 +16,7 @@ const IPC_EXCL: c_int = 0o2000;
 #[cfg(target_os = "solaris")]
 const IPC_PRIVATE: c_int = 0;
 #[cfg(target_os = "solaris")]
-const IPC_RMID: c_int = 0;
+const IPC_RMID: c_int = 10;
 #[cfg(target_os = "solaris")]
 #[repr(C)]
 struct sembuf {

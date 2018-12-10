@@ -12,7 +12,7 @@ const IPC_CREAT: c_int = 0o1000;
 #[cfg(target_os = "solaris")]
 const IPC_EXCL: c_int = 0o2000;
 #[cfg(target_os = "solaris")]
-const IPC_RMID: c_int = 0;
+const IPC_RMID: c_int = 10;
 #[cfg(target_os = "solaris")]
 extern "C" {
     fn shmget(key: key_t, size: size_t, flags: c_int) -> c_int;
